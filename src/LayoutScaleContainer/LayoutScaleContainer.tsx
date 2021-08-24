@@ -3,7 +3,7 @@ import { LayoutScaleContainerProps } from './interface';
 import LayoutScaleContext from './LayoutScaleContext';
 import { useScaleSize } from './useScaleSize';
 import classNames from 'classnames';
-import styles from './LayoutScaleContainer.less';
+import styles from './LayoutScaleContainer.module.less';
 
 const LayoutScaleContainer: React.FC<LayoutScaleContainerProps> = (props) => {
   const { children, config, containerClassName, contentClassName } = props;
