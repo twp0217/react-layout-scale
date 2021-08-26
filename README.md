@@ -35,7 +35,9 @@ export default () => (
 | ------------------ | -------------------------- | ------ | -------- |
 | config             | LayoutScaleContainerConfig | -      | 配置     |
 | containerClassName | string                     | -      | 容器类名 |
+| containerStyle     | string                     | -      | 容器样式 |
 | contentClassName   | string                     | -      | 内容类名 |
+| contentStyle       | string                     | -      | 内容样式 |
 
 ## 支持
 

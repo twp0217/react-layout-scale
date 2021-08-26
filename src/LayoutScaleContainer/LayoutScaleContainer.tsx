@@ -1,4 +1,4 @@
-import React, { useState, CSSProperties } from 'react';
+import React from 'react';
 import { LayoutScaleContainerProps } from './interface';
 import LayoutScaleContext from './LayoutScaleContext';
 import { useScaleSize } from './useScaleSize';
@@ -6,18 +6,27 @@ import classNames from 'classnames';
 import styles from './LayoutScaleContainer.module.less';
 
 const LayoutScaleContainer: React.FC<LayoutScaleContainerProps> = (props) => {
-  const { children, config, containerClassName, contentClassName } = props;
+  const {
+    children,
+    config,
+    containerClassName,
+    containerStyle,
+    contentClassName,
+    contentStyle,
+  } = props;
 
-  const [layoutStyle, setLayoutStyle] = useState<CSSProperties>({});
-  const [contentStyle, setContentStyle] = useState<CSSProperties>({});
+  const [innerContainerStyle, setInnerContainerStyle] =
+    React.useState<React.CSSProperties>({});
+  const [innerContentStyle, setInnerContentStyle] =
+    React.useState<React.CSSProperties>({});
 
   const scaleSize = useScaleSize(config);
 
   React.useEffect(() => {
     if (!!scaleSize) {
       const { width, height, scale } = scaleSize;
-      setLayoutStyle({ width, height });
-      setContentStyle({
+      setInnerContainerStyle({ width, height });
+      setInnerContentStyle({
         transform: `scale(${scale})`,
       });
     }
@@ -27,12 +36,13 @@ const LayoutScaleContainer: React.FC<LayoutScaleContainerProps> = (props) => {
     <LayoutScaleContext.Provider value={scaleSize}>
       <div
         className={classNames(styles.container, containerClassName)}
-        style={layoutStyle}
+        style={{ ...containerStyle, ...innerContainerStyle }}
       >
         <div
           className={classNames(styles.content, contentClassName)}
           style={{
             ...contentStyle,
+            ...innerContentStyle,
             width: config.width,
             height: config.height,
           }}

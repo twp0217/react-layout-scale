@@ -1,6 +1,6 @@
 {
   "name": "@twp0217/react-layout-scale",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -10,7 +10,9 @@
     "release": "npm run build && npm publish --access public",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "commit": "git-cz",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -31,6 +33,9 @@
   },
   "devDependencies": {
     "@umijs/test": "^3.0.5",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
     "dumi": "^1.0.16",
     "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",
@@ -41,5 +46,10 @@
   "peerDependencies": {
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
