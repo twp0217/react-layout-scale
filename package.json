@@ -1,6 +1,6 @@
 {
   "name": "@twp0217/react-layout-scale",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
