@@ -1,15 +1,15 @@
-export interface WidthHeight {
-  width: number;
-  height: number;
-}
-
-export interface LayoutScaleSize extends Partial<WidthHeight> {
+export interface LayoutScaleSize {
+  width?: number;
+  height?: number;
   scale?: number;
   configWidth?: number;
   configHeight?: number;
 }
 
-export interface LayoutScaleContainerConfig extends WidthHeight {}
+export interface LayoutScaleContainerConfig {
+  width: number;
+  height: number;
+}
 
 export interface LayoutScaleContainerProps {
   children: React.ReactNode;

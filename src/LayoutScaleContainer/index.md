@@ -44,7 +44,24 @@ export default () => (
 
 ## API
 
-### props
+### LayoutScaleSize
+
+| 名称         | 类型   | 默认值 | 说明     |
+| ------------ | ------ | ------ | -------- |
+| width        | number | -      | 宽度     |
+| height       | number | -      | 高度     |
+| scale        | number | -      | 缩放值   |
+| configWidth  | number | -      | 配置宽度 |
+| configHeight | number | -      | 配置高度 |
+
+### LayoutScaleContainerConfig
+
+| 名称   | 类型   | 默认值 | 说明 |
+| ------ | ------ | ------ | ---- |
+| width  | number | -      | 宽度 |
+| height | number | -      | 高度 |
+
+### LayoutScaleContainerProps
 
 | 名称               | 类型                       | 默认值 | 说明     |
 | ------------------ | -------------------------- | ------ | -------- |
