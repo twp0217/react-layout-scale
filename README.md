@@ -6,7 +6,7 @@
 
 ## 安装
 
-```javascript
+```bash
 npm i @twp0217/react-layout-scale
 ```
 

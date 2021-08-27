@@ -1,7 +1,7 @@
 import React from 'react';
 import { LayoutScaleContainerProps } from './interface';
 import LayoutScaleContext from './LayoutScaleContext';
-import { useScaleSize } from './useScaleSize';
+import { useLayoutScaleSize } from './useLayoutScaleSize';
 import classNames from 'classnames';
 import styles from './LayoutScaleContainer.module.less';
 
@@ -20,20 +20,20 @@ const LayoutScaleContainer: React.FC<LayoutScaleContainerProps> = (props) => {
   const [innerContentStyle, setInnerContentStyle] =
     React.useState<React.CSSProperties>({});
 
-  const scaleSize = useScaleSize(config);
+  const layoutScaleSize = useLayoutScaleSize(config);
 
   React.useEffect(() => {
-    if (!!scaleSize) {
-      const { width, height, scale } = scaleSize;
+    if (!!layoutScaleSize.scale) {
+      const { width, height, scale } = layoutScaleSize;
       setInnerContainerStyle({ width, height });
       setInnerContentStyle({
         transform: `scale(${scale})`,
       });
     }
-  }, [scaleSize]);
+  }, [layoutScaleSize]);
 
   return (
-    <LayoutScaleContext.Provider value={scaleSize}>
+    <LayoutScaleContext.Provider value={layoutScaleSize}>
       <div
         className={classNames(styles.container, containerClassName)}
         style={{ ...containerStyle, ...innerContainerStyle }}

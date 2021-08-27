@@ -1,5 +1,6 @@
 export type {
-  LayoutScaleContainerProps,
+  LayoutScaleSize,
   LayoutScaleContainerConfig,
+  LayoutScaleContainerProps,
 } from './LayoutScaleContainer';
 export { default, LayoutScaleContext } from './LayoutScaleContainer';

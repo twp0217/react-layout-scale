@@ -1,8 +1,6 @@
 import React from 'react';
-import { LayoutScaleContextProps } from './interface';
+import { LayoutScaleSize } from './interface';
 
-const LayoutScaleContext = React.createContext<
-  LayoutScaleContextProps | undefined
->(undefined);
+const LayoutScaleContext = React.createContext<LayoutScaleSize>({});
 
 export default LayoutScaleContext;

@@ -3,8 +3,10 @@ export interface WidthHeight {
   height: number;
 }
 
-export interface LayoutScaleSize extends WidthHeight {
-  scale: number;
+export interface LayoutScaleSize extends Partial<WidthHeight> {
+  scale?: number;
+  configWidth?: number;
+  configHeight?: number;
 }
 
 export interface LayoutScaleContainerConfig extends WidthHeight {}
@@ -17,5 +19,3 @@ export interface LayoutScaleContainerProps {
   contentClassName?: string;
   contentStyle?: React.CSSProperties;
 }
-
-export interface LayoutScaleContextProps extends LayoutScaleSize {}
